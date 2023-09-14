@@ -10,14 +10,14 @@
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  max-width: 90rem;
+  max-width: 90em;
   /* height: 450px; */
 
 }
 
 .carousel__img {
-  margin: 10rem auto 4rem;
-  width: 80rem;
+  margin: 10em auto 4em;
+  width: 80em;
   /* height: 550px; */
   overflow: hidden;
 }
@@ -25,20 +25,20 @@
 .carousel__box {
   display: flex;
   flex-wrap: nowrap;
-  gap: 1rem;
-  max-width: 260rem;
+  gap: 1em;
+  max-width: 260em;
   /* height: 550px; */
 }
 
 .carousel__item {
-  width: 80rem;
+  width: 80em;
   height: 100%;
 }
 
 .box__img {
   margin: 0 auto;
-  width: 80rem;
-  height: 50rem;
+  width: 80em;
+  height: 50em;
   text-align: center;
   background-color: #eefad7;
   border-radius: 3%;
@@ -55,7 +55,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  width: 80rem;
+  width: 80em;
 }
 
 .carousel__text {
@@ -68,14 +68,14 @@
 .box__text {
   display: flex;
   flex-grow: 1;
-  flex-basis: 67rem;
+  flex-basis: 67em;
   white-space: nowrap;
-  width: 67rem;
+  width: 67em;
 }
 
 .carousel__item__text {
   margin: 0;
-  width: 67rem;
+  width: 67em;
   font-size: 3rem;
   color: #eefad7;
 }
@@ -85,18 +85,67 @@
 }
 
 .nav__item {
-  margin: .1rem;
+  margin: .1em;
   /* padding: 1px; */
-  width: 1rem;
-  height: 1rem;
+  width: 1em;
+  height: 1em;
   cursor: pointer;
 }
 
 .btn {
-  padding: 0.5rem;
+  padding: 0.5em;
   width: 60%;
   height: 60%;
   background-color: #eefad7;
   border-radius: 50%;
   cursor: pointer;
+}
+
+@media (max-width: 30em) /*and (min-width: 20em)*/ {
+  .container {
+    max-width: 18em;
+  }
+  .carousel__img {
+    margin-bottom: 2rem;
+    width: 17em;
+  }
+  .carousel__box {
+    gap: 1em;
+    max-width: 90em;
+    /* height: 550px; */
+  }
+
+  .carousel__item {
+    width: 17em;
+  }
+  .box__img {
+    width: 17em;
+    height: 11em;
+  }
+  .carousel__item__img {
+
+  }
+  .wrapper {
+    flex-direction: column;
+    width: 17em;
+  }
+  .carousel__text {
+    order: 1;
+    width: 75%;
+    overflow: hidden;
+  }
+  .box__text {
+    flex-basis: 17em;
+    width: 17em;
+  }
+
+  .carousel__item__text {
+    width: 17em;
+    font-size: 2em;
+  }
+
+  .carousel__nav {
+    justify-content: center;
+    margin: 2em 0;
+  }
 }
