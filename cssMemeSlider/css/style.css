@@ -1,3 +1,23 @@
+@keyframes slideshow {
+  0%  { left: 0; }
+  10% { left: 0; }
+  12% { left: -100%; }
+  22% { left: -100%; }
+  23% { left: -200%; }
+  33% { left: -200%; }
+  34% { left: -300%; }
+  44% { left: -300%; }
+  46% { left: -400%; }
+  56% { left: -400%; }
+  57% { left: -300%; }
+  67% { left: -300%; }
+  68% { left: -200%; }
+  78% { left: -200%; }
+  79% { left: -100%; }
+  89% { left: -100%; }
+  90% { left: 0%; }
+}
+
 html {
     box-sizing: border-box;
 }
@@ -18,6 +38,7 @@ html {
   margin: 10em auto 4em;
   width: 100%;
   overflow: hidden;
+  order: -2;
 }
 
 .carousel__box {
@@ -50,6 +71,7 @@ html {
 
 .wrapper {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   margin: 0;
   width: 100%;
@@ -97,8 +119,6 @@ html {
 .nav__item.active > .btn {
   background-color: #636b54;
 }
-
-
 
 .btn {
   width: 60%;
