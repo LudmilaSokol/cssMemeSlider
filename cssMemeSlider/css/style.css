@@ -89,6 +89,13 @@ html {
   cursor: pointer;
   border-radius: 50%;
 }
+.nav__item:hover > .btn,
+.nav__item:focus > .btn,
+.nav__item:active > .btn {
+  background-color: #636b54;
+}
+
+
 
 .btn {
   width: 60%;
@@ -97,7 +104,7 @@ html {
   border-radius: 50%;
 }
 
-@media (max-width: 30em) /*and (min-width: 20em)*/ {
+@media (max-width: 480px) /*and (min-width: 320px)*/ {
   .container {
     max-width: 18em;
   }
@@ -108,7 +115,6 @@ html {
   .carousel__box {
     gap: 1em;
     max-width: 90em;
-    /* height: 550px; */
   }
 
   .carousel__item {
