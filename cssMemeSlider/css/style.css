@@ -78,10 +78,13 @@ html {
 }
 
 .carousel__text {
+  width: 100%;
+  overflow: hidden;
+}
+.carousel__text_box {
   display: flex;
   flex-wrap: nowrap;
   width: 500%;
-  overflow: hidden;
 }
 
 .box__text {
@@ -141,22 +144,24 @@ html {
   border-radius: 50%;
 }
 
-/* #btn-1:checked~.carousel__text #text-1 {
+/* перемещение текста при клике на контрол*/
+#btn-1:checked~ .wrapper > .carousel__text .carousel__text_box {
   margin-left: 0;
 }
-#btn-2:checked~.carousel__text #text-2 {
+#btn-2:checked~ .wrapper > .carousel__text .carousel__text_box {
   margin-left: -100%;
 }
-#btn-3:checked~.carousel__text #text-3 {
+#btn-3:checked~ .wrapper > .carousel__text .carousel__text_box {
   margin-left: -200%;
 }
-#btn-4:checked~.carousel__text #text-4 {
+#btn-4:checked~ .wrapper > .carousel__text .carousel__text_box {
   margin-left: -300%;
 }
-#btn-5:checked~.carousel__text #text-5 {
+#btn-5:checked~ .wrapper > .carousel__text .carousel__text_box {
   margin-left: -400%;
-} */
+}
 
+/* перемещение картинок при клике на контрол*/
 #btn-1:checked~.carousel__img > .carousel__box {
   margin-left: 0;
 }
