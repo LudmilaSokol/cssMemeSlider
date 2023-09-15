@@ -1,22 +1,11 @@
-@keyframes container {
-  0%  { left: 0; }
-  10% { left: 0; }
-  12% { left: -100%; }
-  22% { left: -100%; }
-  23% { left: -200%; }
-  33% { left: -200%; }
-  34% { left: -300%; }
-  44% { left: -300%; }
-  46% { left: -400%; }
-  56% { left: -400%; }
-  57% { left: -300%; }
-  67% { left: -300%; }
-  68% { left: -200%; }
-  78% { left: -200%; }
-  79% { left: -100%; }
-  89% { left: -100%; }
-  90% { left: 0%; }
-}
+@keyframes move-text {
+  form {
+    opacity: 1;
+  }
+  50% {opacity: .1;}
+  to {
+    opacity: 1;
+}}
 
 html {
     box-sizing: border-box;
@@ -44,7 +33,6 @@ html {
 .carousel__box {
   display: flex;
   flex-wrap: nowrap;
-  /* gap: 1em; */
   width: 500%;
   height: 100%;
 }
@@ -90,7 +78,6 @@ html {
 .box__text {
   display: flex;
   flex-grow: 1;
-  /* flex-basis: 67em; */
   white-space: nowrap;
   width: 100%;
 }
@@ -126,6 +113,8 @@ html {
 .nav__item:active > .btn {
   background-color: #636b54;
 }
+
+/* выбранный элемент контрол */
 #btn-1:checked~ .wrapper > .nav  .nav__item:nth-child(1) > .btn,
 #btn-2:checked~ .wrapper > .nav  .nav__item:nth-child(2) > .btn,
 #btn-3:checked~ .wrapper > .nav  .nav__item:nth-child(3) > .btn,
@@ -159,6 +148,23 @@ html {
 }
 #btn-5:checked~ .wrapper > .carousel__text .carousel__text_box {
   margin-left: -400%;
+}
+
+/* анимация текста при клике на контрол*/
+#btn-1:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(1) {
+  animation: move-text  3s ease-in-out;
+}
+#btn-2:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(2) {
+  animation: move-text  3s ease-in-out;
+}
+#btn-3:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(3) {
+  animation: move-text  3s ease-in-out;
+}
+#btn-4:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(4) {
+  animation: move-text  3s ease-in-out;
+}
+#btn-5:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(5) {
+  animation: move-text  3s ease-in-out;
 }
 
 /* перемещение картинок при клике на контрол*/
