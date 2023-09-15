@@ -1,4 +1,4 @@
-@keyframes slideshow {
+@keyframes container {
   0%  { left: 0; }
   10% { left: 0; }
   12% { left: -100%; }
@@ -99,8 +99,12 @@ html {
   color: #eefad7;
 }
 
-.carousel__nav {
+.nav {
   display: flex;
+}
+
+.nav__input {
+  display: none;
 }
 
 .nav__item {
@@ -116,7 +120,17 @@ html {
 }
 .nav__item:hover > .btn,
 .nav__item:focus > .btn,
-.nav__item.active > .btn {
+.nav__item:active > .btn {
+  background-color: #636b54;
+}
+#btn-1:checked~ .wrapper > .nav  .nav__item:nth-child(1) > .btn,
+#btn-2:checked~ .wrapper > .nav  .nav__item:nth-child(2) > .btn,
+#btn-3:checked~ .wrapper > .nav  .nav__item:nth-child(3) > .btn,
+#btn-4:checked~ .wrapper > .nav  .nav__item:nth-child(4) > .btn,
+#btn-5:checked~ .wrapper > .nav  .nav__item:nth-child(5) > .btn {
+  height: 80%;
+  width: 80%;
+  border: .3em solid #8d9088;
   background-color: #636b54;
 }
 
@@ -126,6 +140,39 @@ html {
   background-color: #eefad7;
   border-radius: 50%;
 }
+
+#btn-1:checked~.carousel__text #text-1 {
+  margin-left: 0;
+}
+#btn-2:checked~.carousel__text #text-2 {
+  margin-left: -100%;
+}
+#btn-3:checked~.carousel__text #text-3 {
+  margin-left: -200%;
+}
+#btn-4:checked~.carousel__text #text-4 {
+  margin-left: -300%;
+}
+#btn-5:checked~.carousel__text #text-5 {
+  margin-left: -400%;
+}
+
+/* .wrapper .nav #btn-1:checked + .carousel__box {
+  margin-left: 0;
+}
+#btn-2:checked~.carousel__box {
+  margin-left: -100%;
+}
+#btn-3:checked~.carousel__box {
+  margin-left: -200%;
+}
+#btn-4:checked~.carousel__box {
+  margin-left: -300%;
+}
+#btn-5:checked~.carousel__box {
+  margin-left: -400%;
+} */
+
 
 @media (max-width: 800px) /*and (min-width: 320px)*/ {
   .container {
@@ -169,7 +216,7 @@ html {
     font-size: 2em;
   }
 
-  .carousel__nav {
+  .nav {
     justify-content: center;
     margin: 2em 0;
   }
