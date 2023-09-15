@@ -1,4 +1,4 @@
-@keyframes move-text {
+@keyframes show-text {
   0% {
     transform: translateY(-100%);
 }
@@ -35,6 +35,7 @@ html {
 .body {
   background-color: #282424;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -43,7 +44,7 @@ html {
   max-width: 80vw;
   height: 80vh;
 }
-
+/*-----   карусель изображений   -----*/
 .carousel__img {
   margin: 10em auto 4em;
   width: 100%;
@@ -75,9 +76,9 @@ html {
 .carousel__item__img {
   max-width: 100%;
   height: 100%;
-  /* border-radius: 3%; */
 }
 
+/*-----   блок для текста и кнопок   -----*/
 .wrapper {
   display: flex;
   flex-direction: row-reverse;
@@ -86,21 +87,16 @@ html {
   width: 100%;
 }
 
+/*-----   карусель с текстом   ----- */
 .carousel__text {
   width: 100%;
   overflow: hidden;
 }
+
 .carousel__text_box {
   display: flex;
   flex-wrap: nowrap;
   width: 500%;
-}
-
-.box__text {
-  display: flex;
-  flex-grow: 1;
-  white-space: nowrap;
-  width: 100%;
 }
 
 .carousel__item__text {
@@ -110,12 +106,13 @@ html {
   color: #eefad7;
 }
 
-.nav {
-  display: flex;
-}
-
+/*-----   кнопки   -----*/
 .nav__input {
   display: none;
+}
+
+.nav {
+  display: flex;
 }
 
 .nav__item {
@@ -129,9 +126,17 @@ html {
   cursor: pointer;
   border-radius: 50%;
 }
+
+.btn {
+  width: 60%;
+  height: 60%;
+  background-color: #eefad7;
+  border-radius: 50%;
+}
+
+/*-----   интерактивность   -----*/
 .nav__item:hover > .btn,
-.nav__item:focus > .btn,
-.nav__item:active > .btn {
+.nav__item:focus > .btn {
   background-color: #636b54;
 }
 
@@ -145,13 +150,6 @@ html {
   width: 80%;
   border: .3em solid #8d9088;
   background-color: #636b54;
-}
-
-.btn {
-  width: 60%;
-  height: 60%;
-  background-color: #eefad7;
-  border-radius: 50%;
 }
 
 /* перемещение текста при клике на контрол*/
@@ -172,20 +170,12 @@ html {
 }
 
 /* анимация текста при клике на контрол*/
-#btn-1:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(1) {
-  animation: move-text  3s linear;
-}
-#btn-2:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(2) {
-  animation: move-text  3s ease-in-out;
-}
-#btn-3:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(3) {
-  animation: move-text  3s ease-in-out;
-}
-#btn-4:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(4) {
-  animation: move-text  3s ease-in-out;
-}
+#btn-1:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(1),
+#btn-2:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(2),
+#btn-3:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(3),
+#btn-4:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(4),
 #btn-5:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(5) {
-  animation: move-text  3s ease-in-out;
+  animation: show-text  3s ease-in-out;
 }
 
 /* перемещение картинок при клике на контрол*/
@@ -206,67 +196,33 @@ html {
 }
 
 /* анимация изображений при клике на контрол*/
-#btn-1:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(1) .box__img .carousel__item__img {
-  animation: show-image  3s ease-in;
-  animation-delay: -.5s;
-}
-#btn-2:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(2) .box__img .carousel__item__img {
-  animation: show-image  3s ease-in;
-  animation-delay: -.5s;
-}
-#btn-3:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(3) .box__img .carousel__item__img {
-  animation: show-image  3s ease-in;
-  animation-delay: -.5s;
-}
-#btn-4:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(4) .box__img .carousel__item__img {
-  animation: show-image  3s ease-in;
-  animation-delay: -.5s;
-}
+#btn-1:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(1) .box__img .carousel__item__img,
+#btn-2:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(2) .box__img .carousel__item__img,
+#btn-3:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(3) .box__img .carousel__item__img,
+#btn-4:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(4) .box__img .carousel__item__img,
 #btn-5:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(5) .box__img .carousel__item__img {
   animation: show-image  3s ease-in;
   animation-delay: -.5s;
 }
 
 
-@media (max-width: 800px) /*and (min-width: 320px)*/ {
-  .container {
-    /* max-width: 18em; */
-  }
+@media (max-width: 780px) {
+
   .carousel__img {
     margin-bottom: 0;
-    /* width: 17em; */
-  }
-  .carousel__box {
-    /* gap: 1em;
-    max-width: 90em; */
   }
 
-  .carousel__item {
-    /* width: 17em; */
-  }
-  .box__img {
-    /* width: 17em;
-    height: 11em; */
-  }
   .carousel__item__img {
      border-radius: 3%;
   }
   .wrapper {
     flex-direction: column;
-    /* width: 17em; */
   }
   .carousel__text {
     order: 1;
-    /* width: 75%;
-    overflow: hidden; */
-  }
-  .box__text {
-    /* flex-basis: 17em;
-    width: 17em; */
   }
 
   .carousel__item__text {
-    /* width: 17em; */
     font-size: 2em;
   }
 
