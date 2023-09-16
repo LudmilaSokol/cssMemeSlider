@@ -4,9 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cssMemeSlider</title>
+  <link rel="stylesheet" href="css/reset.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  
+<body class="body">
+  <div class="container">
+    <input type="radio" name="btn" id="btn-1" class="nav__input" checked>
+    <input type="radio" name="btn" id="btn-2" class="nav__input">
+    <input type="radio" name="btn" id="btn-3" class="nav__input">
+    <input type="radio" name="btn" id="btn-4" class="nav__input">
+    <input type="radio" name="btn" id="btn-5" class="nav__input">
+
+    <div class="wrapper">
+
+      <div class="nav">
+        <label for="btn-1" class="nav__item">
+          <span class="btn"></span>
+        </label>
+        <label for="btn-2" class="nav__item">
+          <span class="btn"></span>
+        </label>
+        <label for="btn-3" class="nav__item">
+          <span class="btn"></span>
+        </label>
+        <label for="btn-4" class="nav__item">
+          <span class="btn"></span>
+        </label>
+        <label for="btn-5" class="nav__item">
+          <span class="btn"></span>
+        </label>
+      </div> <!--carousel__nav-->
+
+      <div class="carousel__text">
+        <div class="carousel__text_box">
+            <p class="carousel__item__text">Мeme printer.</p>
+            <p class="carousel__item__text">A fool shares problems, a wise man shares memes.</p>
+            <p class="carousel__item__text">People who don't have cats.</p>
+            <p class="carousel__item__text">Thanks for your attention! The presentation is over.</p>
+            <p class="carousel__item__text">Everyone has a reason to howl.</p>
+        </div>
+      </div> <!--carousel-text-->
+
+    </div> <!--wrapper-->
+
+    <div class="carousel__img">
+
+      <div class="carousel__box">
+        <div class="carousel__item">
+          <div class="box__img">
+            <img class="carousel__item__img" src="img/img1.jpg" alt="slide 1">
+          </div>
+        </div>
+        <div class="carousel__item">
+          <div class="box__img">
+            <img class="carousel__item__img" src="img/img2.jpg" alt="slide 2">
+          </div>
+        </div>
+        <div class="carousel__item">
+          <div class="box__img">
+            <img class="carousel__item__img" src="img/img3.jpg" alt="slide 3">
+          </div>
+        </div>
+        <div class="carousel__item">
+          <div class="box__img">
+            <img class="carousel__item__img" src="img/img4.jpg" alt="slide 4">
+          </div>
+        </div>
+        <div class="carousel__item">
+          <div class="box__img">
+            <img class="carousel__item__img" src="img/img5.jpg" alt="slide 5">
+          </div>
+        </div>
+      </div> <!--carousel__box-->
+
+    </div> <!--carousel__img-->
+  </div> <!-- container-->
 </body>
 </html>

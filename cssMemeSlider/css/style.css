@@ -1,0 +1,244 @@
+@keyframes show-text {
+  0% {
+    transform: translateY(-100%);
+}
+50%{
+    transform: translateY(8%);
+}
+65%{
+    transform: translateY(-4%);
+}
+80%{
+    transform: translateY(4%);
+}
+95%{
+    transform: translateY(-2%);
+}
+100% {
+    transform: translateY(0%);
+}
+}
+
+@keyframes show-image  {
+  form {
+    opacity: 1;
+  }
+  50% {opacity: .2;}
+  to {
+    opacity: 1;
+}}
+
+html {
+    box-sizing: border-box;
+}
+
+.body {
+  background-color: #282424;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8% auto;
+  padding: 2em;
+  max-width: 80vw;
+  height: 75vh;
+  border: .2em solid #636b54;
+  border-radius: 2%;
+  box-shadow: .2em .2em #8d9088, .2em .2em #eefad7;
+}
+/*-----   карусель изображений   -----*/
+.carousel__img {
+  margin: 0 auto 2em;
+  width: 100%;
+  overflow: hidden;
+  order: -2;
+}
+
+.carousel__box {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 500%;
+  height: 100%;
+}
+
+.carousel__item {
+  width: 100%;
+  height: 100%;
+}
+
+.box__img {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: #eefad7;
+  border-radius: 3%;
+}
+
+.carousel__item__img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/*-----   блок для текста и кнопок   -----*/
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+}
+
+/*-----   карусель с текстом   ----- */
+.carousel__text {
+  margin-bottom: 2em;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel__text_box {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 500%;
+}
+
+.carousel__item__text {
+  margin: 0;
+  width: 67em;
+  font-size: 2.5rem;
+  color: #eefad7;
+}
+
+/*-----   кнопки   -----*/
+.nav__input {
+  display: none;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .2em;
+  padding: .2em;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.btn {
+  width: 60%;
+  height: 60%;
+  background-color: #eefad7;
+  border-radius: 50%;
+}
+
+/*-----   интерактивность   -----*/
+.nav__item:hover > .btn,
+.nav__item:focus > .btn {
+  background-color: #636b54;
+}
+
+/* выбранный элемент контрол */
+#btn-1:checked~ .wrapper > .nav  .nav__item:nth-child(1) > .btn,
+#btn-2:checked~ .wrapper > .nav  .nav__item:nth-child(2) > .btn,
+#btn-3:checked~ .wrapper > .nav  .nav__item:nth-child(3) > .btn,
+#btn-4:checked~ .wrapper > .nav  .nav__item:nth-child(4) > .btn,
+#btn-5:checked~ .wrapper > .nav  .nav__item:nth-child(5) > .btn {
+  height: 80%;
+  width: 80%;
+  border: .3em solid #8d9088;
+  background-color: #636b54;
+}
+
+/* перемещение текста при клике на контрол*/
+#btn-1:checked~ .wrapper > .carousel__text .carousel__text_box {
+  margin-left: 0;
+}
+#btn-2:checked~ .wrapper > .carousel__text .carousel__text_box {
+  margin-left: -100%;
+}
+#btn-3:checked~ .wrapper > .carousel__text .carousel__text_box {
+  margin-left: -200%;
+}
+#btn-4:checked~ .wrapper > .carousel__text .carousel__text_box {
+  margin-left: -300%;
+}
+#btn-5:checked~ .wrapper > .carousel__text .carousel__text_box {
+  margin-left: -400%;
+}
+
+/* анимация текста при клике на контрол*/
+#btn-1:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(1),
+#btn-2:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(2),
+#btn-3:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(3),
+#btn-4:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(4),
+#btn-5:checked~ .wrapper > .carousel__text > .carousel__text_box .carousel__item__text:nth-child(5) {
+  animation: show-text  3s ease-in-out;
+}
+
+/* перемещение картинок при клике на контрол*/
+#btn-1:checked~.carousel__img > .carousel__box {
+  margin-left: 0;
+}
+#btn-2:checked~.carousel__img > .carousel__box  {
+  margin-left: -100%;
+}
+#btn-3:checked~.carousel__img > .carousel__box {
+  margin-left: -200%;
+}
+#btn-4:checked~.carousel__img > .carousel__box {
+  margin-left: -300%;
+}
+#btn-5:checked~.carousel__img > .carousel__box {
+  margin-left: -400%;
+}
+
+/* анимация изображений при клике на контрол*/
+#btn-1:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(1) .box__img .carousel__item__img,
+#btn-2:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(2) .box__img .carousel__item__img,
+#btn-3:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(3) .box__img .carousel__item__img,
+#btn-4:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(4) .box__img .carousel__item__img,
+#btn-5:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(5) .box__img .carousel__item__img {
+  /* animation: show-text  5s ease-in; */
+  animation: show-image  3s ease-in, show-text  5s ease-in;
+  animation-delay: -.5s;
+}
+
+
+@media (max-width: 780px) {
+
+  .container {
+    height: 70vh;
+  }
+  .carousel__img {
+    margin-bottom: 0;
+  }
+
+  .carousel__item__img {
+     border-radius: 3%;
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+  .carousel__text {
+    order: 1;
+  }
+
+  .carousel__item__text {
+    font-size: 2em;
+  }
+
+  .nav {
+    justify-content: center;
+    margin: 2em 0;
+  }
+}
