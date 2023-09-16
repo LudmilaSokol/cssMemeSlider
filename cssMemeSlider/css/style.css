@@ -39,8 +39,9 @@ html {
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 8em auto;
+  margin: 8% auto;
   padding: 2em;
   max-width: 80vw;
   height: 75vh;
@@ -50,7 +51,7 @@ html {
 }
 /*-----   карусель изображений   -----*/
 .carousel__img {
-  margin: 4em auto;
+  margin: 0 auto 2em;
   width: 100%;
   overflow: hidden;
   order: -2;
@@ -94,6 +95,7 @@ html {
 
 /*-----   карусель с текстом   ----- */
 .carousel__text {
+  margin-bottom: 2em;
   width: 100%;
   overflow: hidden;
 }
@@ -107,7 +109,7 @@ html {
 .carousel__item__text {
   margin: 0;
   width: 67em;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #eefad7;
 }
 
@@ -214,8 +216,7 @@ html {
 @media (max-width: 780px) {
 
   .container {
-    /* min-height: 73vh; */
-    /* margin-bottom: calc(80vh); */
+    height: 70vh;
   }
   .carousel__img {
     margin-bottom: 0;
