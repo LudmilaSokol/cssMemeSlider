@@ -208,7 +208,8 @@ html {
 #btn-3:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(3) .box__img .carousel__item__img,
 #btn-4:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(4) .box__img .carousel__item__img,
 #btn-5:checked~ .carousel__img > .carousel__box .carousel__item:nth-child(5) .box__img .carousel__item__img {
-  animation: show-image  3s ease-in;
+  /* animation: show-text  5s ease-in; */
+  animation: show-image  3s ease-in, show-text  5s ease-in;
   animation-delay: -.5s;
 }
 
